@@ -1,0 +1,85 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@custom-variant",
+      "description": "Define custom variants for Tailwind CSS",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Custom Variants",
+          "url": "https://tailwindcss.com/docs/upgrade-guide#custom-variants"
+        }
+      ]
+    },
+    {
+      "name": "@plugin",
+      "description": "Load Tailwind CSS plugins",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Plugins",
+          "url": "https://tailwindcss.com/docs/plugins"
+        }
+      ]
+    },
+    {
+      "name": "@source",
+      "description": "Specify source files for Tailwind CSS",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Configuration",
+          "url": "https://tailwindcss.com/docs/configuration"
+        }
+      ]
+    },
+    {
+      "name": "@theme",
+      "description": "Define theme variables for Tailwind CSS",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Theme",
+          "url": "https://tailwindcss.com/docs/theme"
+        }
+      ]
+    },
+    {
+      "name": "@layer",
+      "description": "Define layer groups (base, components, utilities)",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Layers",
+          "url": "https://tailwindcss.com/docs/layers"
+        }
+      ]
+    },
+    {
+      "name": "@utility",
+      "description": "Define custom utilities",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Utilities",
+          "url": "https://tailwindcss.com/docs/utilities"
+        }
+      ]
+    },
+    {
+      "name": "@apply",
+      "description": "Apply Tailwind utilities to a rule",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 @apply",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#apply"
+        }
+      ]
+    },
+    {
+      "name": "@config",
+      "description": "Specify configuration file",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Config",
+          "url": "https://tailwindcss.com/docs/configuration"
+        }
+      ]
+    }
+  ]
+}
