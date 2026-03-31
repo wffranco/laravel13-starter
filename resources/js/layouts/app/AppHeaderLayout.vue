@@ -5,19 +5,19 @@ import AppShell from '@/components/AppShell.vue';
 import type { BreadcrumbItem } from '@/types';
 
 type Props = {
-    breadcrumbs?: BreadcrumbItem[];
+  breadcrumbs?: BreadcrumbItem[];
 };
 
 withDefaults(defineProps<Props>(), {
-    breadcrumbs: () => [],
+  breadcrumbs: () => [],
 });
 </script>
 
 <template>
-    <AppShell variant="header">
-        <AppHeader :breadcrumbs="breadcrumbs" />
-        <AppContent variant="header">
-            <slot />
-        </AppContent>
-    </AppShell>
+  <AppShell variant="header">
+    <AppHeader :breadcrumbs="breadcrumbs" />
+    <AppContent variant="header">
+      <slot />
+    </AppContent>
+  </AppShell>
 </template>

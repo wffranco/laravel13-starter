@@ -8,13 +8,13 @@ import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
 import TeamSwitcher from '@/components/TeamSwitcher.vue';
 import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarHeader,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard as dboard } from '@/routes';
 import type { NavItem } from '@/types';
@@ -22,58 +22,58 @@ import type { NavItem } from '@/types';
 const page = usePage();
 
 const dashboard = computed(() =>
-    page.props.currentTeam ? dboard(page.props.currentTeam.slug).url : '/',
+  page.props.currentTeam ? dboard(page.props.currentTeam.slug).url : '/',
 );
 
 const mainNavItems = computed<NavItem[]>(() => [
-    {
-        title: 'Dashboard',
-        href: dashboard.value,
-        icon: LayoutGrid,
-    },
+  {
+    title: 'Dashboard',
+    href: dashboard.value,
+    icon: LayoutGrid,
+  },
 ]);
 
 const footerNavItems: NavItem[] = [
-    {
-        title: 'Repository',
-        href: 'https://github.com/laravel/vue-starter-kit',
-        icon: FolderGit2,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#vue',
-        icon: BookOpen,
-    },
+  {
+    title: 'Repository',
+    href: 'https://github.com/laravel/vue-starter-kit',
+    icon: FolderGit2,
+  },
+  {
+    title: 'Documentation',
+    href: 'https://laravel.com/docs/starter-kits#vue',
+    icon: BookOpen,
+  },
 ];
 </script>
 
 <template>
-    <Sidebar collapsible="icon" variant="inset">
-        <SidebarHeader>
-            <SidebarMenu>
-                <SidebarMenuItem>
-                    <SidebarMenuButton size="lg" as-child>
-                        <Link :href="dashboard">
-                            <AppLogo />
-                        </Link>
-                    </SidebarMenuButton>
-                </SidebarMenuItem>
-            </SidebarMenu>
-            <SidebarMenu>
-                <SidebarMenuItem>
-                    <TeamSwitcher />
-                </SidebarMenuItem>
-            </SidebarMenu>
-        </SidebarHeader>
+  <Sidebar collapsible="icon" variant="inset">
+    <SidebarHeader>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarMenuButton size="lg" as-child>
+            <Link :href="dashboard">
+              <AppLogo />
+            </Link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <TeamSwitcher />
+        </SidebarMenuItem>
+      </SidebarMenu>
+    </SidebarHeader>
 
-        <SidebarContent>
-            <NavMain :items="mainNavItems" />
-        </SidebarContent>
+    <SidebarContent>
+      <NavMain :items="mainNavItems" />
+    </SidebarContent>
 
-        <SidebarFooter>
-            <NavFooter :items="footerNavItems" />
-            <NavUser />
-        </SidebarFooter>
-    </Sidebar>
-    <slot />
+    <SidebarFooter>
+      <NavFooter :items="footerNavItems" />
+      <NavUser />
+    </SidebarFooter>
+  </Sidebar>
+  <slot />
 </template>
