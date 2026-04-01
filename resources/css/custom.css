@@ -1,0 +1,19 @@
+@custom-variant in-not-first {
+  &>:not(:first-child) {
+    @slot;
+  }
+}
+
+@custom-variant in-not-last {
+  &>:not(:last-child) {
+    @slot;
+  }
+}
+
+@layer utilities {
+  html,
+  .scrollbar-thin-accent {
+    @apply scrollbar-thin scrollbar-thumb-accent-foreground/50 scrollbar-track-accent focus:scrollbar-thumb-accent-foreground/70;
+    @apply scrollbar-hover:scrollbar-thumb-accent-foreground/60 scrollbar-active:scrollbar-thumb-accent-foreground/80;
+  }
+}

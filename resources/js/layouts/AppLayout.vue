@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import AppLayout from '@/layouts/app/AppSidebarLayout.vue';
-import type { BreadcrumbItem } from '@/types';
+import AppLayout from '@/layouts/app/AppHeaderLayout.vue';
+import type { LayoutOptions } from '@/types/navigation';
 
-const { breadcrumbs = [] } = defineProps<{
-  breadcrumbs?: BreadcrumbItem[];
-}>();
+type Props = LayoutOptions;
+
+defineProps<Props>();
 </script>
 
 <template>
-  <AppLayout :breadcrumbs="breadcrumbs">
+  <AppLayout :actions="actions" :breadcrumbs="breadcrumbs" v-bind="{ title }">
     <slot />
   </AppLayout>
 </template>
