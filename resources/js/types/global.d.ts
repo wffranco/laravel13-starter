@@ -20,6 +20,7 @@ declare module '@inertiajs/core' {
       name: string;
       auth: Auth;
       sidebarOpen: boolean;
+      sidebarUserAppearance: boolean;
       currentTeam: Team | null;
       teams: Team[];
       [key: string]: unknown;

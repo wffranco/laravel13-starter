@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, router } from '@inertiajs/vue3';
+import { Link, router, usePage } from '@inertiajs/vue3';
 import { LogOut, Settings } from 'lucide-vue-next';
 import {
   DropdownMenuGroup,
@@ -11,16 +11,19 @@ import UserInfo from '@/components/UserInfo.vue';
 import { logout } from '@/routes';
 import { edit } from '@/routes/profile';
 import type { User } from '@/types';
+import AppearanceTabs from './AppearanceTabs.vue';
 
 type Props = {
   user: User;
 };
 
+defineProps<Props>();
+
+const page = usePage();
+
 const handleLogout = () => {
   router.flushAll();
 };
-
-defineProps<Props>();
 </script>
 
 <template>
@@ -29,11 +32,19 @@ defineProps<Props>();
       <UserInfo :user="user" :show-email="true" />
     </div>
   </DropdownMenuLabel>
+  <template v-if="page.props.sidebarUserAppearance">
+    <DropdownMenuSeparator />
+    <DropdownMenuGroup>
+      <DropdownMenuItem>
+        <AppearanceTabs class="w-full" @click.stop small />
+      </DropdownMenuItem>
+    </DropdownMenuGroup>
+  </template>
   <DropdownMenuSeparator />
   <DropdownMenuGroup>
     <DropdownMenuItem :as-child="true">
       <Link class="block w-full cursor-pointer" :href="edit()" prefetch>
-        <Settings class="mr-2 h-4 w-4" />
+        <Settings class="mr-2 size-4" />
         Settings
       </Link>
     </DropdownMenuItem>
@@ -47,7 +58,7 @@ defineProps<Props>();
       as="button"
       data-test="logout-button"
     >
-      <LogOut class="mr-2 h-4 w-4" />
+      <LogOut class="mr-2 size-4" />
       Log out
     </Link>
   </DropdownMenuItem>

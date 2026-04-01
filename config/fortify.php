@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Fortify\CustomFeatures;
 use Laravel\Fortify\Features;
 
 return [
@@ -144,6 +145,7 @@ return [
     */
 
     'features' => [
+        CustomFeatures::sidebarUserAppearance(),
         Features::registration(),
         Features::resetPasswords(),
         Features::emailVerification(),
