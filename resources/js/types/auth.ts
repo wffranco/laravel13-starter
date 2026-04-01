@@ -1,5 +1,7 @@
+export type UUID = `${string}-${string}-${string}-${string}-${string}`;
+
 export type User = {
-  id: number;
+  id: UUID;
   name: string;
   email: string;
   avatar?: string;

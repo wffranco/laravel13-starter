@@ -1,7 +1,9 @@
+import type { UUID } from '.';
+
 export type TeamRole = 'owner' | 'admin' | 'member';
 
 export type Team = {
-  id: number;
+  id: UUID;
   name: string;
   slug: string;
   isPersonal: boolean;
@@ -11,7 +13,7 @@ export type Team = {
 };
 
 export type TeamMember = {
-  id: string;
+  id: UUID;
   name: string;
   email: string;
   avatar?: string | null;
