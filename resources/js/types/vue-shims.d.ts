@@ -3,3 +3,8 @@ declare module '*.vue' {
   const component: DefineComponent;
   export default component;
 }
+
+type ComponentSlots = {
+  [name: string]: Slot | undefined;
+  default?: (() => VNode[]) | undefined;
+};

@@ -11,6 +11,7 @@ import { useCurrentUrl } from '@/composables/useCurrentUrl';
 import type { NavItem } from '@/types';
 
 defineProps<{
+  isActive: (item: NavItem) => boolean | null;
   items: NavItem[];
 }>();
 
@@ -24,7 +25,7 @@ const { isCurrentUrl } = useCurrentUrl();
       <SidebarMenuItem v-for="item in items" :key="item.title">
         <SidebarMenuButton
           as-child
-          :is-active="isCurrentUrl(item.href)"
+          :is-active="isActive(item) ?? isCurrentUrl(item.href)"
           :tooltip="item.title"
         >
           <Link :href="item.href">

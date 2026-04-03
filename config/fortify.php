@@ -145,6 +145,7 @@ return [
     */
 
     'features' => [
+        // CustomFeatures::layout('sidebar'),
         CustomFeatures::sidebarUserAppearance(),
         Features::registration(),
         Features::resetPasswords(),

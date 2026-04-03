@@ -13,7 +13,7 @@ export const sectionVariants = cva('flex flex-1 flex-col items-center', {
 });
 export type SectionVariants = VariantProps<typeof sectionVariants>;
 
-export const contentVariants = cva('flex w-full flex-1', {
+export const contentVariants = cva('w-full flex-1', {
   variants: {
     maxWidth: {
       '4xl': 'max-w-4xl',

@@ -19,6 +19,7 @@ declare module '@inertiajs/core' {
     sharedPageProps: {
       name: string;
       auth: Auth;
+      layout: 'header' | 'sidebar';
       sidebarOpen: boolean;
       sidebarUserAppearance: boolean;
       currentTeam: Team | null;

@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3';
 import AppearanceTabs from '@/components/AppearanceTabs.vue';
 import Heading from '@/components/Heading.vue';
 import { edit } from '@/routes/appearance';
+import type { AppOptions } from '@/types';
 
 defineOptions({
   layout: {
+    title: 'Appearance settings',
     breadcrumbs: [
       {
         title: 'Appearance settings',
@@ -13,14 +14,10 @@ defineOptions({
       },
     ],
   },
-});
+} satisfies AppOptions);
 </script>
 
 <template>
-  <Head title="Appearance settings" />
-
-  <h1 class="sr-only">Appearance settings</h1>
-
   <div class="space-y-6">
     <Heading
       variant="small"

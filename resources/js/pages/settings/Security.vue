@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form, Head } from '@inertiajs/vue3';
+import { Form } from '@inertiajs/vue3';
 import { ShieldCheck } from 'lucide-vue-next';
 import { onUnmounted, ref } from 'vue';
 import SecurityController from '@/actions/App/Http/Controllers/Settings/SecurityController';
@@ -13,6 +13,7 @@ import { Label } from '@/components/ui/label';
 import { useTwoFactorAuth } from '@/composables/useTwoFactorAuth';
 import { edit } from '@/routes/security';
 import { disable, enable } from '@/routes/two-factor';
+import type { AppOptions } from '@/types';
 
 type Props = {
   canManageTwoFactor?: boolean;
@@ -28,6 +29,7 @@ withDefaults(defineProps<Props>(), {
 
 defineOptions({
   layout: {
+    title: 'Security settings',
     breadcrumbs: [
       {
         title: 'Security settings',
@@ -35,7 +37,7 @@ defineOptions({
       },
     ],
   },
-});
+} satisfies AppOptions);
 
 const { hasSetupData, clearTwoFactorAuthData } = useTwoFactorAuth();
 const showSetupModal = ref<boolean>(false);
@@ -44,10 +46,6 @@ onUnmounted(() => clearTwoFactorAuthData());
 </script>
 
 <template>
-  <Head title="Security settings" />
-
-  <h1 class="sr-only">Security settings</h1>
-
   <div class="space-y-6">
     <Heading
       variant="small"
